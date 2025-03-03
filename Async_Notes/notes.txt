@@ -1,0 +1,19 @@
+JavaScript (Default)
+    1)Synchronous (line by line /// block by block code execution)
+    2)Single Threaded (execution dependd on single thread)
+
+Execution Control
+    Execute one line of code at a time(one by one line)
+    |
+    |-> console.log(1)
+    |
+    |-> console.log(2) [not run till last{before} statement completly execute]
+    V    => Call Stack  => Memory Heap
+single thread
+
+
+      Blocking code         |        Non-Blocking code
+->    block the flow of code|        do not block execution
+->    read file sync        |        read file async
+
+                      

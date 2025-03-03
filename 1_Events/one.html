@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width ="200px" id="b" src="bird.jpg" alt="bird"></li>
+            <li><img width ="200px" id="g" src="girl.jpg" alt=""></li>
+            <li><img width ="200px" id="im" src="images.jpeg" alt=""></li>
+            <li><img width ="200px" id="i" src="img.jpg" alt=""></li>
+            <li><img width ="200px" id="s" src="scene.jpg" alt=""></li>
+            <li><a style="color:aliceblue" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.querySelector('#im').onclick = function(){//give less features
+    //     alert("owl click");
+    // }
+
+    //attachEvent()
+    //jQuery-on
+
+    //type, timestamp, defaultPrevent
+    //target, toElement, srcElement, currentTarget,
+    //clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+
+    // document.querySelector('#im').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul");
+        
+    // }, false)// event bubbling
+
+
+
+    //event propogation{pahele apne scope ka event apply hoga then parent ka}(for default false ke liye)[if you want ulta then use true instead of false]
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //     console.log("image clicked");
+        
+    // },true)// false)
+
+    // document.querySelector('#im').addEventListener('click',function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()// event propagate nahi hoga {uper ke event pe nahi jayega}[false is must]
+    // },true) //false)//andar se bahar jana
+
+
+
+    // document.querySelector('#google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     console.log("google clicked");
+    //     e.stopPropagation();
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.Id);
+            
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            
+        }
+
+    }, false)
+
+    // removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
